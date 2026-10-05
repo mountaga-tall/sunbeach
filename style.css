@@ -241,6 +241,23 @@ h1 em { color: var(--gold); font-style: italic; }
 @media (max-width: 900px) {
   .main-nav { display: none; }
   .menu-toggle { display: block; }
+  .mobile-nav {
+    position: fixed; inset: 78px 18px auto; z-index: 39;
+    display: grid; gap: 5px; padding: 10px;
+    border: 1px solid rgba(240,177,111,.18); border-radius: 22px;
+    background: rgba(20,8,4,.92); backdrop-filter: blur(22px);
+    box-shadow: 0 24px 60px rgba(0,0,0,.38);
+    opacity: 0; transform: translateY(-16px) scale(.98);
+    pointer-events: none; transition: .28s ease;
+  }
+  .mobile-nav.is-open { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+  .mobile-nav a {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 15px 16px; color: var(--cream); text-decoration: none;
+    font-family: var(--serif); font-size: 27px; border-radius: 15px;
+  }
+  .mobile-nav a:hover { background: rgba(240,177,111,.08); }
+  .mobile-nav span { color: var(--gold); font: 600 9px var(--sans); letter-spacing: .16em; }
   .header-cta { padding: 9px 13px; }
   .hero { padding-inline: 18px; }
   .experience-bar { position: relative; top: auto; margin-top: 22px; margin-inline: 18px; max-width: none; justify-content: center; }
@@ -255,11 +272,7 @@ h1 em { color: var(--gold); font-style: italic; }
 @media (max-width: 640px) {
   .site-header { padding: 13px 14px; }
   .header-cta { padding: 9px 12px; font-size: 10px; }
-  .mobile-nav { position: fixed; inset: 70px 12px auto; z-index: 39; display: grid; gap: 5px; padding: 10px; border: 1px solid rgba(240,177,111,.18); border-radius: 22px; background: rgba(20,8,4,.90); backdrop-filter: blur(22px); box-shadow: 0 24px 60px rgba(0,0,0,.38); opacity: 0; transform: translateY(-16px) scale(.98); pointer-events: none; transition: .28s ease; }
-  .mobile-nav.is-open { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
-  .mobile-nav a { display: flex; align-items: center; justify-content: space-between; padding: 15px 16px; color: var(--cream); text-decoration: none; font-family: var(--serif); font-size: 27px; border-radius: 15px; }
-  .mobile-nav a:hover { background: rgba(240,177,111,.08); }
-  .mobile-nav span { color: var(--gold); font: 600 9px var(--sans); letter-spacing: .16em; }
+  .mobile-nav { inset: 70px 12px auto; }
 
   .brand-logo { width: 100px; height: 42px; }
   .hero { min-height: 92svh; padding-top: 130px; }
